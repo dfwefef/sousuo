@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="input">
+    <button >按钮</button>
+    <div class="div"></div>
+    <script>
+       let b=[`农夫矿泉水`,`<p>农夫矿泉水</p>`,
+    `百岁山矿泉水`,`<p>百岁山矿泉水</p>`,
+    `怡宝矿泉水`,`<p>怡宝矿泉水</p>`,
+    `仙女水`,`<p>仙女水</p>`,
+    `仙女花`,`<p>仙女花</p>`,
+    `猪少鸿`,`<p>猪少鸿</p>`,
+    `农夫`,`<p>农夫</p>`,
+    `农夫与蛇`,`<p>农夫与蛇</p>`
+    ]
+    let div=document.querySelector(`.div`)
+    let input=document.querySelector(`.input`)
+    let button=document.querySelector(`button`)
+    button.addEventListener(`click`,function(){
+        let inputValue=input.value
+        let e=``
+        for(let a=0;a<b.length-1;a+=2){
+            let c=0
+            let d=inputValue.length
+            
+            if(b[a].length>=inputValue.length){
+                
+                while(d<=b[a].length){
+                    
+                    if(inputValue===b[a].substring(c,d)){
+                    e+=b[a+1]
+                    div.innerHTML=e
+                    break
+                    }
+                    c+=1
+                    d+=1
+                    console.log(d)
+                }
+                
+            }
+        }
+    if(e===``){
+        div.innerHTML=`未找到结果`
+    }
+    })
+    
+        
+
+    </script>
+</body>
+</html>
